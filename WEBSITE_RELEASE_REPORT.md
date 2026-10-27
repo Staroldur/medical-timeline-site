@@ -1,5 +1,9 @@
 # Website release preparation — October 27, 2026
 
+**Historical initial-site snapshot.** Privacy draft/indexing/deployment status below
+is superseded by PRIVACY_POLICY_FINALIZATION_REPORT.md (milestone 11.1). Prior
+validation evidence is retained; it is not a claim of final-policy publication.
+
 Implemented in a real clone of `Staroldur/medical-timeline-site`, on main.
 The owner subsequently requested committing and pushing the website for testing.
 No Pages configuration, app upload or submission was performed; website deployment

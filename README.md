@@ -1,90 +1,84 @@
 # Medical Timeline companion website
 
-Static English/Hebrew website for `Staroldur/medical-timeline-site`.
-No build step, package installation, JavaScript, cookies, analytics, contact forms,
-accounts or backend. Serve the repository root directly with GitHub Pages.
+Static English/Hebrew website for `Staroldur/medical-timeline-site`, hosted on GitHub
+Pages. No build step, packages, JavaScript, cookies, analytics, forms, accounts or
+backend. Images and the licensed font are local.
 
-**Prepared for repository testing; GitHub Pages deployment is not verified. Privacy pages are complete publication drafts, not
-legally approved or effective policies. Do not enable Pages until the review below
-is complete.** A noindex tag is not an access control; public Git content is public.
+## Privacy policy status — milestone 11.1
+
+Complete publication content is prepared in both languages, with matching copies in
+the application repository's PRIVACY_POLICY_CANDIDATE_EN.md and
+PRIVACY_POLICY_CANDIDATE_HE.md (filenames retained for existing references).
+The owner confirmed Stas Stern, an individual developer based in Israel,
+staroldur@gmail.com, sole developer-side mailbox access, purpose-limited retention,
+and handling access/correction/deletion requests with reasonable verification.
+Actual App Store countries are still being configured; the policy does not promise
+worldwide availability or impose one jurisdiction's law on every user.
+
+The source effective date is **October 27, 2026**, for publication on that date.
+If the finalized content is first published later, update BOTH policy `<time>` values,
+visible dates and the matching application copies to the actual publication date.
+Do not backdate or treat the previous draft's deployment as final publication.
+
+The public English/Hebrew policy and English support URLs returned HTTPS 200 on
+October 27, 2026, but still served the **previous drafts** during this milestone.
+This milestone's final content is local and uncommitted; no deployment has occurred.
+Do not use a local validation pass as proof that the finalized policy is already live.
+See PRIVACY_POLICY_FINALIZATION_REPORT.md for decisions, sources and release checks.
 
 ## Pages
 
 | English | Hebrew | Purpose |
 | --- | --- | --- |
-| index.html | he.html | Product, real functionality, free/Full Unlock distinction |
-| support.html | support-he.html | Setup, purchases, backups, permissions, safe bug reporting |
-| privacy.html | privacy-he.html | Complete policy candidates with hosting disclosure |
+| index.html | he.html | Existing product pages |
+| support.html | support-he.html | Setup, purchases, backups and safe bug reports |
+| privacy.html | privacy-he.html | Complete privacy policies |
 
-Each language switch opens the equivalent page. English is the default destination.
-Styles and assets are shared; Hebrew has RTL chrome and isolated Latin text.
-The original Tree of Life artwork is never mirrored.
+Language switches preserve page context. English is the default. Hebrew has RTL
+layout, isolated Latin names/email/providers and readable separate operator/date/
+contact fields. Approved original Tree of Life artwork is never mirrored.
 
-## Local preview and checks
+## Preview and validate
 
 ```sh
 python3 -m http.server 8766 --bind 127.0.0.1
 python3 validate.py
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -p test_validate.py
 ```
 
-Open `http://127.0.0.1:8766/`. `validate.py` uses only Python's standard library;
-it checks source structure, links/fragments, assets and metadata, not browser layout,
-legal sufficiency or full W3C conformance. The site also works without Python once
-hosted. No tool-generated runtime files are required.
+Open `http://127.0.0.1:8766/`. Python is for optional local preview/checks only.
+The host serves root HTML/CSS directly. The source validator rejects draft text,
+noindex/nofollow, missing effective dates/disclosures, differing policy dates,
+robots policy exclusions, sitemap omissions, broken local links and remote assets.
+It cannot certify legal compliance or the actual publication date.
 
-## Review before publication
+## Publish the finalized policy
 
-Owner confirmed **Stas Stern** and **staroldur@gmail.com** on October 27, 2026.
-The policy preserves all substantive sections of the current application candidates,
-cross-checked against architecture, security review, privacy inventory and StoreKit
-report. The GitHub Pages section is specific to this website. Nothing was copied
-from Dino's gameplay, children’s rules or privacy claims.
+1. Review the confirmed operating practices in the finalization report and ensure
+   they are maintained. Recheck whether the actual launch countries/mailbox setup
+   require further statutory notice, address, transfer or other operational steps.
+   No invented address, DPO, organization, certification or legal exemption appears.
+2. Set both effective dates to the ACTUAL publication date if it is no longer
+   October 27, 2026. Synchronize application policy copies. Run the checks above.
+3. When explicitly authorized, commit/push the reviewed changes to **main**. This
+   milestone does not authorize commit/push. Exclude `.DS_Store` and private data.
+4. Existing Pages should use Deploy from a branch → main → / (root). Review its
+   actual deployment result; enforce HTTPS. No external deployment service needed.
+5. Verify every URL below anonymously over HTTPS. For both policies, verify the new
+   effective date, support-retention/request text, no draft notice/noindex, correct
+   language switch and mobile rendering. Confirm robots.txt allows the policies
+   and sitemap.xml contains both. A 200 response with old draft content is insufficient.
+6. Set App Store Connect Privacy Policy URL to the finalized English URL, with the
+   Hebrew URL in Hebrew-localized policy metadata where available. Use support.html
+   as English Support URL and support-he.html for Hebrew. No account access was changed.
+7. In the APPLICATION repository follow RELEASE_BUILD_V1.md: set PRIVACY_POLICY_URL
+   through the existing release-config helper to the verified finalized English
+   URL. Its prominent link opens the full Hebrew policy. No new routing layer.
+8. Verify the final signed normal lib/main.dart Release archive, actual next build
+   number, iPhone-only family [1] and installed About policy action before App Review.
+   Website checks do not validate the app's signing, privacy label or export compliance.
 
-Still required, with external review where appropriate:
-
-- Effective date and intended distribution territories.
-- Any required legal/address details and authority to record/share family/child data.
-- Support mailbox access, provider arrangements, retention/deletion and international handling.
-  The confirmed address uses gmail.com; no retention or access practice is inferred.
-- Applicable privacy rights, identity verification and actual request handling.
-- Actual hosting settings and GitHub's separate processing. GitHub logs visitor IP
-  addresses for security; do not say nobody processes website visitor information.
-- Final App Privacy questionnaire and encryption/export-compliance decisions belong
-  to the app release owner; these pages do not establish those answers.
-
-Apply the same approved decisions to **both** privacy pages and the application's
-policy candidates. Set the effective date, replace the draft handling paragraphs with
-confirmed wording, remove the draft notice/title wording and privacy noindex tags.
-Remove privacy Disallow entries from robots.txt and add both privacy URLs to sitemap.xml.
-Update homepage/support links that say “policy draft”. Do not publish unfinished text.
-No date, jurisdiction, retention period or certification has been guessed.
-
-## Publish with GitHub Pages
-
-1. Finish and approve the legal/operator review above. Review the diff for public
-   safety: only public HTML/CSS, approved art, font/license and documentation belong here.
-2. The owner requested committing and pushing the website to **main** for testing.
-   No deployment workflow or external host is required. Repository availability does
-   not by itself establish a successful GitHub Pages deployment.
-3. In GitHub repository Settings → Pages, select **Deploy from a branch**, branch
-   **main**, folder **/ (root)**. Save and wait for the actual Pages deployment result.
-4. Confirm the deployed HTTPS base is actually
-   `https://staroldur.github.io/medical-timeline-site/`. This remains a **planned URL**
-   until verified. Enforce HTTPS when available. If base/path changes, update all
-   canonical/alternate links, sitemap.xml, robots.txt and validate.py’s BASE value.
-5. Open every page below without signing in, check both languages on mobile, inspect
-   navigation/links, compare approved policy content, check HTTPS and response status.
-6. Enter the verified `support.html` URL in App Store Connect's English Support URL;
-   use `support-he.html` for Hebrew localized metadata. Enter the verified privacy URL
-   in the corresponding policy fields; English links prominently to full Hebrew.
-7. In the **application** checkout configure `PRIVACY_POLICY_URL` with the real published
-   `privacy.html` URL via `tool/release_config.py prepare`. Keep the existing single
-   destination; a second locale routing system is unnecessary. See RELEASE_BUILD_V1.md.
-8. Rebuild and verify the final signed **1.0.0** Release candidate with `lib/main.dart`,
-   final policy defines, correct next build number and iPhone-only device family.
-   Verify the actual About policy action before the owner uploads/submits manually.
-
-Planned verification checklist (none is claimed live):
+Public destinations (existing hosted pages; finalized revision still needs deployment):
 
 - https://staroldur.github.io/medical-timeline-site/index.html
 - https://staroldur.github.io/medical-timeline-site/he.html
@@ -93,35 +87,24 @@ Planned verification checklist (none is claimed live):
 - https://staroldur.github.io/medical-timeline-site/privacy.html
 - https://staroldur.github.io/medical-timeline-site/privacy-he.html
 
-## App Store download link
+If the base changes, update canonical/alternate links, sitemap.xml, robots.txt and
+validate.py's BASE. Policies are indexable; indexing is not a compliance guarantee.
 
-No confirmed numeric Medical Timeline App Store ID was found in the release records.
-Both landing pages therefore use a noninteractive “Coming soon” label. After actual
-app publication, verify the official Medical Timeline listing and its numeric ID;
-replace each `.coming` span with a real `.button` anchor to
-`https://apps.apple.com/app/id<CONFIRMED_NUMERIC_ID>`. Verify the listing belongs to
-Medical Timeline: Family Care / מה קבעתי. Do not substitute Dino or another app.
-Keep price out of static copy. No Family Sharing or health-record synchronization
-availability is promised. App rating/sharing flags are separate app build settings.
+## App Store link
 
-## Assets and licensing
+No confirmed numeric Medical Timeline Store ID was found in the release sources.
+Coming soon remains noninteractive. After verifying the real published Medical
+Timeline listing, replace `.coming` spans in both homepages with `.button` links to
+`https://apps.apple.com/app/id<CONFIRMED_NUMERIC_ID>`. Never substitute another app.
+No static price, subscription, health-record sync or Family Sharing promise.
 
-- `assets/yggdrasil.webp`: resized to 640×640 from approved original **appIcon.png**
-  in `Staroldur/medical-timeline`; no redraw, replacement or generated art.
-- `assets/icon.webp`: same original, 128×128; used as navigation icon and favicon.
-- `assets/Heebo.ttf`: unchanged local variable font reused from the reference
-  `Staroldur/letters-app`, originally the Heebo project. Redistribution under the
-  included **assets/Heebo-OFL.txt** (SIL Open Font License 1.1); copyright retained.
-- English editorial headings use system Georgia; no external font CDN or download.
+## Asset provenance
 
-The artwork is approved product branding, not a medical document or new license grant.
-No private app configuration, records, backups, screenshots, signing assets, patient
-fixtures or source repository tree were copied. No real medical information appears.
+- assets/yggdrasil.webp: approved application appIcon.png, resized to 640×640.
+- assets/icon.webp: same original, resized to 128×128.
+- assets/Heebo.ttf: unchanged local font from Staroldur/letters-app, originally the
+  Heebo project. Full SIL OFL 1.1 copyright/license in assets/Heebo-OFL.txt.
+- System Georgia for English headings; no font CDN, stock image or redrawn branding.
 
-## External provider references
-
-- [GitHub Pages and its IP logging](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages)
-- [GitHub General Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)
-- [GitHub Pages publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-
-See WEBSITE_RELEASE_REPORT.md for observed validation and intentional limits.
+No medical documents, private backups, patient fixtures, signing assets or private
+application configuration are part of this public repository.
