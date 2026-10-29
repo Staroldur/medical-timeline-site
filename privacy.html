@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy — Medical Timeline</title>
-<meta name="description" content="Medical Timeline privacy policy: local medical data, encrypted backups, sharing, Apple purchases, support correspondence, privacy requests and website hosting.">
+<meta name="description" content="Medical Timeline privacy policy: local medical data, unencrypted backups and profile copies, sharing, Apple purchases, support correspondence, privacy requests and website hosting.">
 <meta name="theme-color" content="#f7f4ec">
 <link rel="canonical" href="https://staroldur.github.io/medical-timeline-site/privacy.html">
 <link rel="alternate" hreflang="en" href="https://staroldur.github.io/medical-timeline-site/privacy.html">
@@ -25,7 +25,7 @@
 <h1>Privacy policy</h1>
 <p class="intro">The full policy for the app and this website.</p>
 <p class="policy-operator"><strong>Operator:</strong> Stas Stern — individual developer based in Israel</p>
-<p class="policy-date"><strong>Effective date:</strong> <time datetime="2026-10-27">October 27, 2026</time></p>
+<p class="policy-date"><strong>Effective date:</strong> <time datetime="2026-10-29">October 29, 2026</time></p>
 <p class="policy-contact"><strong>Support and privacy contact:</strong> <a href="mailto:staroldur@gmail.com"><bdi dir="ltr">staroldur@gmail.com</bdi></a></p>
 <a class="equivalent" href="privacy-he.html" lang="he" dir="rtl">למדיניות המלאה בעברית</a>
 </section>
@@ -34,7 +34,7 @@
 <h2>On this page</h2>
 <a href="#policy-1">Information stored on your device</a>
 <a href="#policy-2">Protection and its limits</a>
-<a href="#policy-3">Manual encrypted backups and restoration</a>
+<a href="#policy-3">Manual backups and restoration</a>
 <a href="#policy-4">Individual profiles and readable exports</a>
 <a href="#policy-5">Local reminders and Calendar</a>
 <a href="#policy-6">Apple-managed purchases</a>
@@ -57,20 +57,21 @@
 </section>
 <section id="policy-2">
 <h2>Protection and its limits</h2>
-<p>On iOS the app uses private storage and device file protection. Sensitive app files are excluded from ordinary operating-system app backup. The database is not separately encrypted with your backup password. Optional App Lock uses device-owner authentication, including device-passcode fallback; the app receives no biometric templates. Someone who knows your device passcode may authenticate. App-switcher previews are covered even when App Lock is off.</p>
+<p>On iOS the app uses private storage and device file protection. Sensitive app files are excluded from ordinary operating-system app backup. The app relies on operating-system file protection for its private database; it does not manage a separate database encryption key. Optional App Lock uses device-owner authentication, including device-passcode fallback; the app receives no biometric templates. Someone who knows your device passcode may authenticate. App-switcher previews are covered even when App Lock is off.</p>
 <p>These protections do not guarantee absolute security, forensic erasure, protection on a compromised or unlocked device, or prevention of screenshots. Files and in-memory copies can remain temporarily after an interruption; cleanup may wait until a later successful app launch. External copies are outside App Lock&#x27;s control.</p>
 </section>
 <section id="policy-3">
-<h2>Manual encrypted backups and restoration</h2>
-<p>You can create a password-encrypted full backup and explicitly save or share it. Backups are not automatic. Creating or checking a backup does not mean that you saved it outside this device. Choose a strong password and keep it safely: the app does not retain the backup password and the developer cannot recover it.</p>
+<h2>Manual backups and restoration</h2>
+<p>You can create a full backup without creating or entering a password and explicitly save or share it. Backups are manual, unencrypted ZIP-based .medtimeline files. Anyone with access to a backup can read the information, including medical records, documents and profile photos. Keep files in a safe place and share only with people you trust. Creating or checking a backup does not mean it was saved outside this device. There is no automatic medical-data backup or sync.</p>
 <p>Full restoration replaces all current family and medical records in the app with the backup&#x27;s records. It retains the destination device&#x27;s local App Lock, onboarding and language choices. Reminder intentions are restored and reconciled locally; Calendar links and the old operating-system notification queue are not transferred. Existing Calendar copies or previously exported files are not removed by restoration. Purchase ownership is not part of a medical backup.</p>
-<p>Device loss, damage or uninstalling the app can lose records unless you have saved an external backup and retained its password. Ordinary OS app backup is not a substitute for the app&#x27;s manual encrypted backup.</p>
+<p>Device loss, damage or uninstalling the app can lose records unless you have saved an external backup. Ordinary OS app backup is not a substitute for the app&#x27;s manual backup.</p>
+<p>Files from older pre-release versions cannot be opened by this version. Existing on-device records are preserved through the update and can be backed up again. Keep old backup files; the app does not automatically delete or convert them.</p>
 </section>
 <section id="policy-4">
 <h2>Individual profiles and readable exports</h2>
-<p>An encrypted individual profile transfer contains a copy of the chosen person&#x27;s records and documents. It omits relatives, reminders and Calendar links. The recipient needs the password; communicate it separately. Import creates an independent profile, not live synchronization. The receiving device chooses its own App Lock settings.</p>
-<p>Readable medical-record export creates a PDF summary and original documents in a ZIP. Individual PDF sharing and printing are also explicit actions. These readable files are not password-encrypted by the app and cannot be used for full restoration. Anyone able to open them may read the information. Original documents may retain metadata. Select destinations and recipients carefully.</p>
-<p>Files, Photos, AirDrop, mail, print and other destinations you choose may retrieve, store, transmit or synchronize information under their own policies, including cloud-backed providers. The app cannot revoke or delete their copies. Sending a password gives access to the corresponding encrypted file. The developer does not receive exports through an app backend.</p>
+<p>A shared profile is an unencrypted ZIP-based .medtimeline file containing an independent copy of the chosen person&#x27;s records, Medical Profile conditions, documents and photo. No password is required. Anyone with access to the file can read its contents. It omits relatives, reminders and Calendar links. The recipient reviews and confirms import, which creates a new profile and does not overwrite an existing person or synchronize later edits. The receiving device chooses its own App Lock settings.</p>
+<p>Readable medical-record export creates a PDF summary and original documents in a ZIP. Individual PDF sharing and printing are also explicit actions. These files are unencrypted and cannot be used for full restoration. Anyone able to open them may read the information. Original documents may retain metadata. Select destinations and recipients carefully.</p>
+<p>Files, Photos, AirDrop, mail, print and other destinations you choose may retrieve, store, transmit or synchronize information under their own policies, including cloud-backed providers. The app cannot revoke or delete their copies. The developer does not receive exports through an app backend.</p>
 </section>
 <section id="policy-5">
 <h2>Local reminders and Calendar</h2>
@@ -79,7 +80,7 @@
 </section>
 <section id="policy-6">
 <h2>Apple-managed purchases</h2>
-<p>Full Unlock is an optional one-time non-consumable purchase handled by Apple. StoreKit communicates with Apple for product pricing, purchase processing and verified purchase restoration. Connectivity and Apple Account authentication may be required. The app does not receive payment-card details or send medical profiles, records or documents with purchase requests. There is no developer purchase server or purchase analytics SDK. Apple handles its services under its own privacy practices. Encrypted full backup and restore remain free. Existing records remain accessible independently of purchase status.</p>
+<p>Full Unlock is an optional one-time non-consumable purchase handled by Apple. StoreKit communicates with Apple for product pricing, purchase processing and verified purchase restoration. Connectivity and Apple Account authentication may be required. The app does not receive payment-card details or send medical profiles, records or documents with purchase requests. There is no developer purchase server or purchase analytics SDK. Apple handles its services under its own privacy practices. Full backup and restore remain free. Existing records remain accessible independently of purchase status.</p>
 </section>
 <section id="policy-7">
 <h2>Local retention and deletion</h2>
@@ -88,20 +89,20 @@
 <section id="policy-8">
 <h2>Voluntary support correspondence</h2>
 <p>Contact Stas Stern at <a href="mailto:staroldur@gmail.com">staroldur@gmail.com</a> for app support or privacy questions. Contacting support is optional and is not required to use the app. No support email is sent automatically. The app’s contact action opens your email application with the app version in the subject, an empty body and no medical attachments; you decide whether to send. Website email links also open your chosen email application.</p>
-<p>The developer receives the correspondence you voluntarily send, which may include your sender address, subject, message content and any attachments you choose to include. It is used to answer questions, investigate technical problems, follow up on your inquiry and handle privacy requests. You do not have to provide medical information to receive technical support; without enough non-sensitive details, it may not be possible to investigate a particular problem. Please do not send medical information, patient names, medical documents, family photos, private backups or backup passwords. If you nevertheless include sensitive information, it may be received as part of your email; this does not create a developer-operated medical-data server.</p>
+<p>The developer receives the correspondence you voluntarily send, which may include your sender address, subject, message content and any attachments you choose to include. It is used to answer questions, investigate technical problems, follow up on your inquiry and handle privacy requests. You do not have to provide medical information to receive technical support; without enough non-sensitive details, it may not be possible to investigate a particular problem. Please do not send medical information, patient names, medical documents, family photos, or private backups. If you nevertheless include sensitive information, it may be received as part of your email; this does not create a developer-operated medical-data server.</p>
 <p>The support mailbox is a Gmail address operated through Google’s email services. On the developer’s side, mailbox access is limited to Stas Stern. Google, your own email provider and other providers involved in delivering email may process and store correspondence under their own policies. Their processing may take place outside your country, including outside Israel. The app does not automatically send medical records to Google or any other email provider.</p>
 <p>Support correspondence is retained only as reasonably necessary to handle the inquiry, related follow-up and applicable obligations. There is no fixed automatic deletion period. You may request deletion of your correspondence at <a href="mailto:staroldur@gmail.com">staroldur@gmail.com</a>. Deletion may be limited by applicable obligations and email-provider retention or backups; permanent erasure of all provider copies cannot be guaranteed.</p>
 </section>
 <section id="policy-9">
 <h2>Privacy rights and requests</h2>
 <p>Stas Stern is an individual developer based in Israel. The app is intended for English-speaking international customers and Hebrew-speaking users in Israel. Availability in particular countries depends on App Store Connect settings; availability everywhere is not promised. Applicable privacy rights may vary by jurisdiction. This policy does not limit rights provided by applicable law.</p>
-<p>Local medical data: the developer has no remote copy or account system through which to retrieve, correct or delete your on-device records. Use the app to review, edit or delete local information, or remove the app from the device. Manage encrypted backups saved elsewhere, source documents and previously shared copies separately with the storage providers or recipients you selected. Sending an email request does not remotely delete local records or those external copies.</p>
+<p>Local medical data: the developer has no remote copy or account system through which to retrieve, correct or delete your on-device records. Use the app to review, edit or delete local information, or remove the app from the device. Manage backups saved elsewhere, source documents and previously shared copies separately with the storage providers or recipients you selected. Sending an email request does not remotely delete local records or those external copies.</p>
 <p>Support correspondence: for questions or requests concerning personal information in support messages, email <a href="mailto:staroldur@gmail.com">staroldur@gmail.com</a>. You may request access to, correction of or deletion of that information where provided by applicable law. Describe the request and, where possible, send it from the address used for the correspondence. The developer may need reasonable verification before disclosing, correcting or deleting correspondence. Do not send medical documents or identity-document copies with the initial request. Requests will be handled according to applicable law; no additional fixed response deadline is promised here.</p>
 </section>
 <section id="policy-10">
 <h2>Permissions and external records</h2>
 <p>You can manage camera, Photos, Calendar, notifications and other device permissions through iOS Settings, as applicable. Some selections use the system’s file or photo picker rather than broad library access. Withdrawing a permission may prevent the related feature from working and does not by itself delete information already saved.</p>
-<p>External Calendar copies, cloud documents, encrypted backups and readable shared files may require separate action with the respective providers or recipients. Apple manages purchase history and Apple Account records under its own practices. Medical Timeline cannot erase Apple’s records or revoke copies held by other services.</p>
+<p>External Calendar copies, cloud documents, backups and readable shared files may require separate action with the respective providers or recipients. Apple manages purchase history and Apple Account records under its own practices. Medical Timeline cannot erase Apple’s records or revoke copies held by other services.</p>
 </section>
 <section id="policy-11">
 <h2>This website and external services</h2>
